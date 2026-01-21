@@ -1,0 +1,126 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Frontend (React)",
+			"type": "shell",
+			"command": "npm run dev",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}/ginos-gelato/client"
+			},
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		},
+		{
+			"label": "Start Backend (.NET)",
+			"type": "shell",
+			"command": "dotnet run",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}/ginos-gelato/server"
+			},
+			"isBackground": true,
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		},
+		{
+			"label": "Install Frontend Dependencies",
+			"type": "shell",
+			"command": "npm install",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}/ginos-gelato/client"
+			},
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		},
+		{
+			"label": "Build Backend (.NET)",
+			"type": "shell",
+			"command": "dotnet build",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}/ginos-gelato/server"
+			},
+			"isBackground": false,
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		},
+		{
+			"label": "Build Frontend (React)",
+			"type": "shell",
+			"command": "npm run build",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}/ginos-gelato/client"
+			},
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		},
+		{
+			"label": "🚀 Start Full Application",
+			"dependsOn": [
+				"Start Backend (.NET)",
+				"Start Frontend (React)"
+			],
+			"dependsOrder": "sequence",
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		}
+	]
+}
